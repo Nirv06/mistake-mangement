@@ -74,14 +74,25 @@ public class DashboardController {
     @FXML
     protected void onManageSubjectsClick() {
         try {
-            FXMLLoader loader = new FXMLLoader(DashboardController.class.getResource("manage-subjects-view.fxml"));
-            Scene scene = new Scene(loader.load(), 500, 400);
+            // Check if resource exists
+            java.net.URL resource = DashboardController.class.getResource("manage-subjects-view.fxml");
+            if (resource == null) {
+                welcomeText.setText("FXML file not found: manage-subjects-view.fxml");
+                return;
+            }
+            
+            FXMLLoader loader = new FXMLLoader(resource);
+            Scene scene = new Scene(loader.load(), 750, 650);
             Stage stage = new Stage();
-            stage.setTitle("Manage Subjects");
+            stage.setTitle("Subject Management");
             stage.setScene(scene);
+            stage.setResizable(true);
             stage.show();
         } catch (IOException e) {
             welcomeText.setText("Error loading subject management: " + e.getMessage());
+            e.printStackTrace();
+        } catch (Exception e) {
+            welcomeText.setText("Unexpected error: " + e.getMessage());
             e.printStackTrace();
         }
     }

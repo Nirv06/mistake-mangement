@@ -15,7 +15,7 @@
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
   </padding>
 
-  <Label text="Manage Subjects" textFill="#2c3e50">
+  <Label text="Subject Management" textFill="#2c3e50">
     <font>
       <Font name="System Bold" size="20.0"/>
     </font>
@@ -41,7 +41,7 @@
             onAction="#onAddSubjectClick"/>
   </HBox>
 
-  <ListView fx:id="subjectsListView" prefHeight="250.0" prefWidth="450.0"/>
+  <ListView fx:id="subjectsListView" prefHeight="300.0" prefWidth="650.0"/>
 
   <HBox spacing="15.0" alignment="CENTER">
     <Button fx:id="deleteSubjectBtn" text="Delete Subject" 
