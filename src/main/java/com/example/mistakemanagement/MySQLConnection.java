@@ -6,8 +6,6 @@ import java.sql.SQLException;
 
 public class MySQLConnection {
 
-
-
     
     private static final String URL = "jdbc:mysql://localhost:3306/mistake_management";
     private static final String USERNAME = "root";
