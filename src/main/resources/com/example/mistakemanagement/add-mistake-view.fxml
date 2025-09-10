@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.mistakemanagement.AddMistakeController">
+  <padding>
+    <Insets bottom="15.0" left="20.0" right="20.0" top="15.0"/>
+  </padding>
+
+  <Label text="Add New Mistake" textFill="#2c3e50">
+    <font>
+      <Font name="System Bold" size="20.0"/>
+    </font>
+  </Label>
+
+  <GridPane hgap="15.0" vgap="12.0" prefWidth="850.0">
+    <columnConstraints>
+      <ColumnConstraints minWidth="140.0" prefWidth="140.0"/>
+      <ColumnConstraints minWidth="450.0" prefWidth="450.0"/>
+    </columnConstraints>
+    
+    <rowConstraints>
+      <RowConstraints minHeight="30.0"/>
+      <RowConstraints minHeight="30.0"/>
+      <RowConstraints minHeight="30.0"/>
+      <RowConstraints minHeight="30.0"/>
+      <RowConstraints minHeight="80.0"/>
+      <RowConstraints minHeight="80.0"/>
+      <RowConstraints minHeight="80.0"/>
+      <RowConstraints minHeight="80.0"/>
+      <RowConstraints minHeight="30.0"/>
+      <RowConstraints minHeight="30.0"/>
+    </rowConstraints>
+
+    <Label text="Title:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <TextField fx:id="titleField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+    <Label text="Subject:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <ComboBox fx:id="subjectCombo" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <Label text="Category:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <ComboBox fx:id="categoryCombo" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <Label text="Difficulty:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <ComboBox fx:id="difficultyCombo" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <Label text="Description:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <TextArea fx:id="descriptionArea" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+    <Label text="Your Answer:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <TextArea fx:id="yourAnswerArea" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+    <Label text="Correct Answer:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+    <TextArea fx:id="correctAnswerArea" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+    <Label text="Explanation:" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+    <TextArea fx:id="explanationArea" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+
+    <Label text="Source:" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+    <TextField fx:id="sourceField" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+
+    <Label text="Tags:" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
+    <TextField fx:id="tagsField" promptText="e.g., Important, Review Needed" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+  </GridPane>
+
+  <HBox spacing="15.0" alignment="CENTER">
+    <Button fx:id="saveBtn" text="Save Mistake" 
+            style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;"
+            onAction="#onSaveClick"/>
+    
+    <Button fx:id="clearBtn" text="Clear Form" 
+            style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;"
+            onAction="#onClearClick"/>
+    
+    <Button fx:id="closeBtn" text="Close" 
+            style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;"
+            onAction="#onCloseClick"/>
+  </HBox>
+
+  <Label fx:id="statusLabel" text="" textFill="#e74c3c" alignment="CENTER">
+    <font>
+      <Font size="12.0"/>
+    </font>
+  </Label>
+</VBox>

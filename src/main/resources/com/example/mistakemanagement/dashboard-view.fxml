@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.mistakemanagement.DashboardController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+  </padding>
+
+  <Label text="Mistake Management System" textFill="#2c3e50">
+    <font>
+      <Font name="System Bold" size="24.0"/>
+    </font>
+  </Label>
+  
+  <Label fx:id="welcomeText" text="Welcome! Track and learn from your mistakes." textFill="#7f8c8d">
+    <font>
+      <Font size="14.0"/>
+    </font>
+  </Label>
+
+  <VBox spacing="15.0" alignment="CENTER">
+    <Button fx:id="addMistakeBtn" text="Add New Mistake" 
+            style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;"
+            onAction="#onAddMistakeClick"/>
+    
+    <Button fx:id="viewMistakesBtn" text="View All Mistakes" 
+            style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;"
+            onAction="#onViewMistakesClick"/>
+    
+    <Button fx:id="manageSubjectsBtn" text="Manage Subjects" 
+            style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;"
+            onAction="#onManageSubjectsClick"/>
+    
+    <Button fx:id="testDbBtn" text="Test Database Connection" 
+            style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-size: 12px; -fx-padding: 8 16;"
+            onAction="#onTestDbClick"/>
+  </VBox>
+
+  <HBox spacing="10.0" alignment="CENTER">
+    <Label fx:id="statsLabel" text="Stats: " textFill="#34495e">
+      <font>
+        <Font name="System Bold" size="12.0"/>
+      </font>
+    </Label>
+  </HBox>
+</VBox>

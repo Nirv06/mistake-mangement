@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.mistakemanagement.ViewMistakesController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+  </padding>
+
+  <Label text="View All Mistakes" textFill="#2c3e50">
+    <font>
+      <Font name="System Bold" size="20.0"/>
+    </font>
+  </Label>
+
+  <HBox spacing="15.0" alignment="CENTER_LEFT">
+    <Label text="Filter by Subject:" textFill="#34495e">
+      <font>
+        <Font name="System Bold" size="12.0"/>
+      </font>
+    </Label>
+    <ComboBox fx:id="subjectFilterCombo" promptText="All Subjects"/>
+    
+    <Label text="Search:" textFill="#34495e">
+      <font>
+        <Font name="System Bold" size="12.0"/>
+      </font>
+    </Label>
+    <TextField fx:id="searchField" promptText="Search mistakes..."/>
+    
+    <Button fx:id="refreshBtn" text="Refresh" 
+            style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 12px; -fx-padding: 8 16;"
+            onAction="#onRefreshClick"/>
+  </HBox>
+
+  <ListView fx:id="mistakesListView" prefHeight="400.0" prefWidth="750.0"/>
+
+  <HBox spacing="15.0" alignment="CENTER">
+    <Button fx:id="viewDetailsBtn" text="View Details" 
+            style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;"
+            onAction="#onViewDetailsClick"/>
+    
+    <Button fx:id="markReviewedBtn" text="Mark as Reviewed" 
+            style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;"
+            onAction="#onMarkReviewedClick"/>
+    
+    <Button fx:id="closeBtn" text="Close" 
+            style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;"
+            onAction="#onCloseClick"/>
+  </HBox>
+
+  <Label fx:id="statusLabel" text="" textFill="#e74c3c" alignment="CENTER">
+    <font>
+      <Font size="12.0"/>
+    </font>
+  </Label>
+</VBox>
